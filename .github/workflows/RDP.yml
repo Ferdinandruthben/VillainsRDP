@@ -1,4 +1,4 @@
-name: RUN-Villain
+name: RUN[ʋιʅʅαιɳ]
 
 on: workflow_dispatch
 
@@ -26,6 +26,8 @@ jobs:
       run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "Villain4u" -Force)
     - name: Create Tunnel
       run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp 3389"'
+    - name: Download WallPaper
+      run: Invoke-WebRequest https://is.gd/VBackground -OutFile VBackground.png
     - name: Download Timeout Script
       run: Invoke-WebRequest https://is.gd/TimeOutScript -OutFile TimeOutScript.ps1
     - name: Keep Alive
